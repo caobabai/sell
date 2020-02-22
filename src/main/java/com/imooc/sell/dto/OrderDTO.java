@@ -1,29 +1,23 @@
-package com.imooc.sell.dataobject;
+package com.imooc.sell.dto;
 
+import com.imooc.sell.dataobject.OrderDetail;
 import com.imooc.sell.enums.OrderStatusEnum;
 import com.imooc.sell.enums.PayStatusEnum;
 import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Transient;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Created by 曹友学
- * 2020-02-20 14:37
+ * 2020-02-22 11:30
  */
-@Entity
 @Data
-@DynamicUpdate
-public class OrderMaster {
+public class OrderDTO {
 
     /** 订单id */
-    @Id
     private String orderId;
 
     /** 买家名字 */
@@ -42,15 +36,17 @@ public class OrderMaster {
     private BigDecimal orderAmount;
 
     /** 订单状态，默认0新下单 */
-    private Integer orderStatus = OrderStatusEnum.NEW.getCode();
+    private Integer orderStatus;
 
     /**  支付状态，默认0等待支付 */
-    private Integer payStatus = PayStatusEnum.WAIT.getCode();
+    private Integer payStatus;
 
     /** 创建时间 */
     private Date createTime;
 
     /** 更新时间 */
     private Date updateTime;
+
+    List<OrderDetail> orderDetailList;
 
 }

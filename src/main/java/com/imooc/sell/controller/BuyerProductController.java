@@ -2,8 +2,8 @@ package com.imooc.sell.controller;
 
 import com.imooc.sell.dataobject.ProductCategory;
 import com.imooc.sell.dataobject.ProductInfo;
-import com.imooc.sell.service.ICategoryService;
-import com.imooc.sell.service.IProductService;
+import com.imooc.sell.service.CategoryService;
+import com.imooc.sell.service.ProductService;
 import com.imooc.sell.util.ResultVOUtil;
 import com.imooc.sell.vo.ProductInfoVO;
 import com.imooc.sell.vo.ProductVO;
@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,10 +27,10 @@ import java.util.stream.Collectors;
 public class BuyerProductController {
 
     @Autowired
-    private IProductService productService;
+    private ProductService productService;
 
     @Autowired
-    private ICategoryService categoryService;
+    private CategoryService categoryService;
 
     @GetMapping("/list")
     public ResultVO list() {

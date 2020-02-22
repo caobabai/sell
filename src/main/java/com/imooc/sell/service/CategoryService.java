@@ -8,7 +8,7 @@ import java.util.List;
  * Created by 曹友学
  * 2020-02-19 13:36
  */
-public interface ICategoryService {
+public interface CategoryService {
     ProductCategory findOne(Integer categoryId);
 
     List<ProductCategory> findAll();
