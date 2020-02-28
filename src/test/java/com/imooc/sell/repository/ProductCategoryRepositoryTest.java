@@ -28,7 +28,7 @@ public class ProductCategoryRepositoryTest {
 
     @Test
     public void findOneTest() {
-        ProductCategory productCategory = repository.findById(1).get();
+        ProductCategory productCategory = repository.findById(1).orElse(null);
         System.out.println(productCategory.toString());
     }
 
